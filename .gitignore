@@ -1,3 +1,7 @@
+# own Config
+*/files
+.idea
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
