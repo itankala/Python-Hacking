@@ -1,6 +1,7 @@
 # own Config
 */files
 .idea
+/password-cracker/rainbowtable.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
