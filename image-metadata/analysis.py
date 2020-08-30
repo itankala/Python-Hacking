@@ -6,6 +6,7 @@ def analysis(image_file):
 
     img = Image.open(image_file)
     file = open(output_path, "w")
+    file.write("===== " + get_filename(image_file) + " =====\n")
     for i, j in img._getexif().items():
         if i in ExifTags.TAGS:
             try:
@@ -13,7 +14,7 @@ def analysis(image_file):
             except:
                 data = ExifTags.TAGS[i] + " - " + str(j)
             file.write(data + "\n")
-            print(data)
+    file.close()
 
 
 analysis("files/picture.jpg")
