@@ -1,5 +1,5 @@
 import socket
-import decode_bytes
+from helper.decode_bytes import decode_bytes_with_special_character
 
 host = ""
 port = 1337
@@ -19,7 +19,7 @@ while True:
     connection.send(str.encode(cmd))
     bytes_data = connection.recv(506)
     try:
-        data = decode_bytes.replace_special_character(bytes_data).decode("utf-8")
+        data = decode_bytes_with_special_character(bytes_data)
     except Exception as e:
         data = bytes_data
     print("Result: ")
