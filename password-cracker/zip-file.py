@@ -3,6 +3,7 @@ import string
 import time
 from zipfile import ZipFile, ZIP_STORED
 
+
 ## Richtigkeit des Passwortes überprüfen
 def is_password_correct(zip_path, output_path, str_password):
     try:
@@ -13,6 +14,7 @@ def is_password_correct(zip_path, output_path, str_password):
     except Exception as e:
         pass
     return False
+
 
 ## Brute-Force
 def brute_force(zip_path, output_path):
@@ -28,6 +30,7 @@ def brute_force(zip_path, output_path):
         end = time.time()
         print(str(i) + "er Buchstabenkombinationen {:5.3f}s".format(end-start))
 
+
 ## Dictionary
 def dictionary(zip_path, output_path, passwordlist_path):
     passwordlist = open(passwordlist_path, "r")
@@ -41,12 +44,14 @@ def dictionary(zip_path, output_path, passwordlist_path):
     passwordlist.close()
     return None
 
-zip_path = "files/test.zip"
+
+zip_path = "files/mama.zip"
 output_path = "files/temp"
 passwordlist_path = "passwordlist.txt"
 password = ""
 start = 0
 end = 0
+
 
 try:
     with ZipFile(zip_path, mode='r', compression=ZIP_STORED, allowZip64=True) as zip_file:
@@ -66,4 +71,4 @@ finally:
         print("===== ZIP-Datei hat kein Passwort =====")
     else:
         print("===== Paswort gefunden: " + password + " =====")
-        print("===== Dauer: {:5.3f}s =====".format(end-start))
+        print("===== Dauer: {:5.3f}s =====".format(end - start))
