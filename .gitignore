@@ -1,6 +1,7 @@
 # own Config
 */files
 .idea
+/main
 /password-cracker/rainbowtable.txt
 
 # Byte-compiled / optimized / DLL files
@@ -132,3 +133,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/main/
+/main/
